@@ -28,8 +28,10 @@ public class ShapeCollector {
         return theShape;
     }
 
-    public Shape showFigures(){
-        return null;
+    public void showFigures(){
+        for (Shape s : shapes) {
+            System.out.println("Figure: " + s.getShapeName() + ",field: " + s.getField());
+        }
     }
 
     public int getArraySize(){
