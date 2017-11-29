@@ -14,19 +14,15 @@ public class SearchFlight {
         airportsMap.put("FRA",true);
         airportsMap.put("BRU",true);
 
-        Boolean kk= airportsMap.containsKey(flight.getArrivalAirport());
-
-        if (!airportsMap.containsKey(flight.getArrivalAirport()) || !airportsMap.containsKey(flight.getDepartureAirport())) {
+        if (!airportsMap.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException();
         }
-        else {
-            if (airportsMap.get(flight.getArrivalAirport())) {
-                System.out.println("Flight " +flight.getDepartureAirport() + " - " + flight.getArrivalAirport() + " is possible.");
-            }
-            else {
+        if (!airportsMap.containsKey(flight.getDepartureAirport())) {
+            throw new RouteNotFoundException();
+        }
+            if (!airportsMap.get(flight.getArrivalAirport())) {
                 System.out.println("Airport " +flight.getArrivalAirport() + " is closed");
             }
-        };
-
+            System.out.println("Flight " +flight.getDepartureAirport() + " - " + flight.getArrivalAirport() + " is possible.");
     }
 }
