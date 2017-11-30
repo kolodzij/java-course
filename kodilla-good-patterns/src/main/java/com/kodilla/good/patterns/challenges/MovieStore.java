@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MovieStore {
     public Map<String, List<String>> getMovies() {
@@ -26,6 +27,14 @@ public class MovieStore {
         booksTitlesWithTranslations.put("FL", flashTranslations);
 
         return booksTitlesWithTranslations;
+    }
+
+    public void printMovies() {
+       String text =  this.getMovies().entrySet().stream()
+                .map(entry->entry.getKey()+ " " + entry.getValue() + " ! ")
+                .collect(Collectors.joining("!"));
+
+       System.out.println(text);
     }
 }
 
