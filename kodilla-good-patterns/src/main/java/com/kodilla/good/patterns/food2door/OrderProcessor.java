@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class OrderProcessor {
 
-    ArrayList<Producent> producentsList;
+    private ArrayList<Producent> producentsList;
 
     public OrderProcessor() {
         producentsList = new ArrayList<Producent>();
@@ -28,7 +28,7 @@ public class OrderProcessor {
         if (p==null) {
             System.out.println("Nie znaleziono dostawcy dla zamówienia " + orderRequest.toString());
         } else {
-            System.out.println("Zamówienie " + orderRequest.toString()+ " zostało przesłane do " + p.getName());
+            System.out.println("Zamówienie " + orderRequest.toString()+ " zostanie przesłane do " + p.getName() + ", "+ p.getProducentId());
             p.process(orderRequest);
 
         }

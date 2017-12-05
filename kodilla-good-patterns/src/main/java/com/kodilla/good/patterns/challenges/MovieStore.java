@@ -31,7 +31,7 @@ public class MovieStore {
 
     public void printMovies() {
        String text =  this.getMovies().entrySet().stream()
-                .map(entry->entry.getKey()+ " " + entry.getValue())
+                .flatMap(entry->entry.getValue().stream())
                 .collect(Collectors.joining(" ! "));
 
        System.out.println(text);

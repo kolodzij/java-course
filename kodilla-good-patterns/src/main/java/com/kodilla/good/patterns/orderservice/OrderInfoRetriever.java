@@ -7,12 +7,10 @@ public class OrderInfoRetriever {
     public OrderRequest retrive() {
         User user = new User("Jan","Kowalski","j.kowalski@blabla");
         ArrayList<Product> productsList = new ArrayList<>();
-        Product p1= new Product("aaa","128956484");
-        Product p2= new Product("bbb","315465452");
-        Product p3= new Product("ccc","899453213");
-        Product p4= new Product("ddd","523897458");
+        productsList.add(new Product("aaa","128956484"));
+        productsList.add(new Product("bbb","315465452"));
+        productsList.add(new Product("ccc","899453213"));
 
         return new OrderRequest(user, 5547, productsList);
-
     }
 }

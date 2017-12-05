@@ -2,15 +2,10 @@ package com.kodilla.good.patterns.food2door;
 
 public class ExtraFoodShop implements Producent{
 
-    String name;
-    long producentID;
+    private String name="ExtraFoodShopSpZOO";
+    private long producentId =3581;
 
-    public ExtraFoodShop() {
-        this.name = "ExtraFoodShopSpZOO";
-        this.producentID = 3581;
-    }
-
-    public boolean canMakeOrder(OrderRequest orderRequest) {
+     public boolean canMakeOrder(OrderRequest orderRequest) {
         if (orderRequest.getProduct().getProductCode().startsWith("a")) {
             return true;
         }
@@ -25,9 +20,8 @@ public class ExtraFoodShop implements Producent{
     public String getName() {
         return name;
     }
-
     @Override
-    public long getProducentID() {
-        return producentID;
+    public long getProducentId() {
+        return producentId;
     }
 }

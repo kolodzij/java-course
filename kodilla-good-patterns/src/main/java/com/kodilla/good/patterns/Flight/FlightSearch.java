@@ -1,24 +1,25 @@
 package com.kodilla.good.patterns.Flight;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.stream.Collectors;
 
 public class FlightSearch {
 
-    ArrayList<Flight> availbeFlights = new ArrayList<Flight>();
+    FlightRepository availbeFlights;
 
-    public void addFlights(Flight flight) {
-        this.availbeFlights.add(flight);
+    public FlightSearch(FlightRepository availbeFlights) {
+        this.availbeFlights = availbeFlights;
     }
 
     public ArrayList<Flight> searchFlightFrom(String departure) {
-        return this.availbeFlights.stream()
+        return this.availbeFlights.getAvailbeFlights().stream()
                 .filter(f->f.getDepartureAirport()==departure)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public ArrayList<Flight> searchFlightTo(String arrival) {
-        return this.availbeFlights.stream()
+        return this.availbeFlights.getAvailbeFlights().stream()
                 .filter(f->f.getArrivalAirport()==arrival)
                 .collect(Collectors.toCollection(ArrayList::new));
     }

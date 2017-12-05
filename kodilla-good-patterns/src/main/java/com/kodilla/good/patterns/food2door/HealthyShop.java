@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HealthyShop implements Producent {
-    String name;
-    long producentID;
-    HashMap<String, Integer> stock;
+    private String name;
+    private long producentID;
+    private HashMap<String, Integer> stock;
 
     public HealthyShop() {
         this.name = "HealthyShop";
@@ -37,7 +37,7 @@ public class HealthyShop implements Producent {
     }
 
     @Override
-    public long getProducentID() {
+    public long getProducentId() {
         return producentID;
     }
 

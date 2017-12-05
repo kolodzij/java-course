@@ -4,6 +4,5 @@ public interface Producent {
     void process(OrderRequest order);
     boolean canMakeOrder(OrderRequest orderRequest);
     String getName();
-    long getProducentID();
-
+    long getProducentId();
 }

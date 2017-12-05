@@ -3,17 +3,25 @@ package com.kodilla.good.patterns.Flight;
 public class Application {
 
     public static void main(String[] args) {
-        FlightSearch searchFlight = new FlightSearch();
-        searchFlight.addFlights(new Flight("Warszawa","Wrocław"));
-        searchFlight.addFlights(new Flight("Warszawa","Kraków"));
-        searchFlight.addFlights(new Flight("Gdańsk","Poznań"));
-        searchFlight.addFlights(new Flight("Warszawa","Poznań"));
-        searchFlight.addFlights(new Flight("Poznań","Berlin"));
-        searchFlight.addFlights(new Flight("Berlin","Warszawa"));
-        searchFlight.addFlights(new Flight("Warszawa","Frankfurt"));
-        searchFlight.addFlights(new Flight("Frankfurt","Nowy Jork"));
-        searchFlight.addFlights(new Flight("Frankfurt","Londyn"));
 
+        FlightRepository flightRepository = new FlightRepository();
+
+        try {
+            flightRepository.addFlights(new Flight("Warszawa", "Wrocław"));
+            flightRepository.addFlights(new Flight("Warszawa", "Kraków"));
+            flightRepository.addFlights(new Flight("Gdańsk", "Poznań"));
+            flightRepository.addFlights(new Flight("Warszawa", "Poznań"));
+            flightRepository.addFlights(new Flight("Poznań", "Berlin"));
+            flightRepository.addFlights(new Flight("Berlin", "Warszawa"));
+            flightRepository.addFlights(new Flight("Warszawa", "Frankfurt"));
+            flightRepository.addFlights(new Flight("Frankfurt", "Nowy Jork"));
+            flightRepository.addFlights(new Flight("Frankfurt", "Londyn"));
+        } catch (FlightAlreadyExistException e) {
+            System.out.println("Podano niewłaściwe połączenie");
+            return;
+        }
+
+        FlightSearch searchFlight = new FlightSearch(flightRepository);
 
         System.out.println("Lot z: ");
         searchFlight.searchFlightFrom("Warszawa").stream()

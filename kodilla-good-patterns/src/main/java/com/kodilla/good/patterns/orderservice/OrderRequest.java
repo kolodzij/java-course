@@ -3,13 +3,13 @@ package com.kodilla.good.patterns.orderservice;
 import java.util.ArrayList;
 
 public class OrderRequest {
-    public User user;
-    public long orderID;
-    public ArrayList<Product> orderedProducts;
+    private User user;
+    private long orderId;
+    private ArrayList<Product> orderedProducts;
 
-    public OrderRequest(User user, long orderID, ArrayList<Product> orderedProducts) {
+    public OrderRequest(User user, long orderId, ArrayList<Product> orderedProducts) {
         this.user = user;
-        this.orderID = orderID;
+        this.orderId = orderId;
         this.orderedProducts = orderedProducts;
     }
 
@@ -17,8 +17,8 @@ public class OrderRequest {
         return user;
     }
 
-    public long getOrderID() {
-        return orderID;
+    public long getOrderId() {
+        return orderId;
     }
 
     public ArrayList<Product> getOrderedProducts() {

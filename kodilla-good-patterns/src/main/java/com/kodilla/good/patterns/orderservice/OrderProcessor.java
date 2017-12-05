@@ -14,13 +14,13 @@ public class OrderProcessor {
         }
 
         public OrderDto process(final OrderRequest orderRequest) {
-            boolean isOrderMade = orderService.order(orderRequest.getUser(), orderRequest.getOrderID());
+            boolean isOrderMade = orderService.order(orderRequest.getUser(), orderRequest.getOrderId());
             if(isOrderMade) {
                 informationService.inform(orderRequest.getUser());
-                orderRepository.createOrder(orderRequest.getUser(),orderRequest.getOrderID());
-                return new OrderDto(orderRequest.getUser(),orderRequest.getOrderID());
+                orderRepository.createOrder(orderRequest.getUser(),orderRequest.getOrderId());
+                return new OrderDto(orderRequest.getUser(),orderRequest.getOrderId());
             } else {
-                return new OrderDto(orderRequest.getUser(),orderRequest.getOrderID());
+                return new OrderDto(orderRequest.getUser(),orderRequest.getOrderId());
             }
         }
     }
