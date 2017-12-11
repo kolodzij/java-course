@@ -5,7 +5,7 @@ import com.kodilla.stream.forumuser.ForumUser;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class StreamMain {
+public class    StreamMain {
     public static void main(String[] args) {
         Forum theForum = new Forum();
 
@@ -22,9 +22,9 @@ public class StreamMain {
     }
 }
 
- /*       BookDirectory theBookDirectory = new BookDirectory();
 
-        String theResultStringOfBooks = theBookDirectory.getList().stream()
+ //   String theResultStringOfBooks = theBookDirectory.getList().stream()
+ /*       BookDirectory theBookDirectory = new BookDirectory();
                 .filter(book -> book.getYearOfPublication() > 2005)
                 .map(Book::toString)
                 .collect(Collectors.joining(",\n","<<",">>"));

@@ -14,13 +14,13 @@ public class FlightSearch {
 
     public ArrayList<Flight> searchFlightFrom(String departure) {
         return this.availbeFlights.getAvailbeFlights().stream()
-                .filter(f->f.getDepartureAirport()==departure)
+                .filter(f->f.getDepartureAirport().equals(departure))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public ArrayList<Flight> searchFlightTo(String arrival) {
         return this.availbeFlights.getAvailbeFlights().stream()
-                .filter(f->f.getArrivalAirport()==arrival)
+                .filter(f->f.getArrivalAirport().equals(arrival))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 

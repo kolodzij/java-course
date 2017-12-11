@@ -3,9 +3,9 @@ package com.kodilla.good.patterns.orderservice;
 import java.util.ArrayList;
 
 public class OrderRequest {
-    private User user;
-    private long orderId;
-    private ArrayList<Product> orderedProducts;
+    public User user;
+    public long orderId;
+    public ArrayList<Product> orderedProducts;
 
     public OrderRequest(User user, long orderId, ArrayList<Product> orderedProducts) {
         this.user = user;
