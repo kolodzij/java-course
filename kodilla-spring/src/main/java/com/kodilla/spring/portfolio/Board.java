@@ -1,15 +1,16 @@
 package com.kodilla.spring.portfolio;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-@Service
+@Component
 public class Board {
-    TaskList toDoList;
-    TaskList inProgressList;
-    TaskList doneList;
+    private TaskList toDoList;
+    private TaskList inProgressList;
+    private TaskList doneList;
 
 
     public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
