@@ -7,11 +7,7 @@ import java.util.List;
 
 @Component
 public class TaskList {
-    ArrayList<String> tasksList;
-
-    public TaskList() {
-        this.tasksList = new ArrayList<>() ;
-    }
+    private ArrayList<String> tasksList = new ArrayList<>() ;
 
     public ArrayList<String> addTask(String task) {
         tasksList.add(task);

@@ -1,12 +1,5 @@
 package com.kodilla.spring.portfolio;
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-
-@Component
 public class Board {
     private TaskList toDoList;
     private TaskList inProgressList;
@@ -31,18 +24,15 @@ public class Board {
         doneList.addTask(task);
     }
 
-    public ArrayList<TaskList> getAllList() {
-        ArrayList<TaskList> longList = new ArrayList<>();
-        longList.add(toDoList);
-        longList.add(inProgressList);
-        longList.add(doneList);
-        return longList;
-    }
-    public ArrayList<String> getAllTasks() {
-        return getAllList().stream()
-                .flatMap(s->s.getTasksList().stream())
-                .collect(Collectors.toCollection(ArrayList::new));
+    public TaskList getToDoList() {
+        return toDoList;
     }
 
+    public TaskList getInProgressList() {
+        return inProgressList;
+    }
 
+    public TaskList getDoneList() {
+        return doneList;
+    }
 }
