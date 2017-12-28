@@ -17,7 +17,6 @@ public class TemperaturesStub implements Temperatures {
         return stubResult;
     }
 
-    @Override
     public int method(int number) {
         return 0;
     }

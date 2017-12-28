@@ -1,7 +1,5 @@
 package com.kodilla.exception.io;
 
-import com.sun.deploy.util.SystemUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
