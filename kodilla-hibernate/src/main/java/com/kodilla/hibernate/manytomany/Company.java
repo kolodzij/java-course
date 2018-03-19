@@ -5,13 +5,23 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
-        name="Company.searchCompany",
-        query="SELECT * FROM COMPANIES" +
-                " WHERE substr(company_name,1,3) = :COMPANY_NAME",
-        resultClass = Company.class
-)
+@NamedNativeQueries(
+        {
+                @NamedNativeQuery(
+                        name = "Company.searchCompany",
+                        query = "SELECT * FROM COMPANIES" +
+                                " WHERE substr(company_name,1,3) = :COMPANY_NAME",
+                        resultClass = Company.class
+                ),
 
+                @NamedNativeQuery(
+                        name = "Company.searchCompanyLike",
+                        query = "SELECT * FROM COMPANIES" +
+                                " WHERE company_name LIKE :COMPANY_NAME",
+                        resultClass = Company.class
+                )
+        }
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
